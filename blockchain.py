@@ -121,7 +121,7 @@ def mine():
 def new_transaction():
     return "We'll add a new transaction."
 
-@app.route('/chain', methods-['GET'])
+@app.route('/chain', methods=['GET'])
 def full_chain():
     response = {
         'chain': blockchain.chain,
