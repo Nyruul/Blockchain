@@ -76,6 +76,13 @@ class Blockchain(object):
         :return: <bool> True if Correct, False if not.
         """
 
+        guess = f'{last_proof}{proof}'.encode()
+        guess_hash =hashlib.sha256(guess).hexdigest()
+        return guess_hash[:4] == "0000"
+        # To adjust the difficulty of the algorithm, we could modify the number of leading zeroes. 
+        # But 4 is sufficient. You’ll find out that the addition of a single leading zero makes a mammoth difference 
+        # to the time required to find a solution.
+
     @property
     def last_block(self):
         return self.chain[-1]
