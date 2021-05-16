@@ -111,11 +111,6 @@ node_identifier = str(uuid4()).replace('-','')
 #Instantiate the Blockchain
 blockchain = Blockchain()
 
-
-@app.route('/mine', methods=['GET'])
-def mine():
-    return "We'll mine a new Block."
-
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
     values = request.get_json()
